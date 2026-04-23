@@ -24,7 +24,7 @@ def create_scatter_plot(df, output_folder):
 
     plt.figure(figsize=(8, 6))
     plt.scatter(df["sepal_length"], df["petal_length"])
-    plt.title("Scatter Plot of Sepal Length vs Petal Length")
+    plt.title("Scatter Plot: Sepal Length vs Petal Length")
     plt.xlabel("Sepal Length")
     plt.ylabel("Petal Length")
     plt.savefig(os.path.join(output_folder, "scatter_plot.png"))
@@ -38,7 +38,7 @@ def create_histogram(df, output_folder):
 
     plt.figure(figsize=(8, 6))
     plt.hist(df["petal_width"], bins=10)
-    plt.title("Histogram of Petal Width")
+    plt.title("Histogram: Petal Width")
     plt.xlabel("Petal Width")
     plt.ylabel("Frequency")
     plt.savefig(os.path.join(output_folder, "histogram.png"))
@@ -68,7 +68,7 @@ def create_boxplot(df, output_folder):
     axes[1, 1].set_title("Petal Width")
     axes[1, 1].set_ylabel("Value")
 
-    fig.suptitle("Boxplots of Iris Measurements")
+    fig.suptitle("Boxplots: Iris Measurements")
     plt.tight_layout()
     plt.savefig(os.path.join(output_folder, "boxplot.png"))
     plt.close()

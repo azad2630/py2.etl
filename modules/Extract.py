@@ -3,13 +3,14 @@ import os
 import requests
 import subprocess
 
+
 def download_file_wget(url, output_folder):
     os.makedirs(output_folder, exist_ok=True)
     filename = os.path.basename(url)
-    # filename = url.split('/')[-1]
     wget.download(url, out=output_folder + "/" + filename, bar=False)
-    print(f"File downloaded to {output_folder + "/" + filename}")
+    print(f"File downloaded to {output_folder + '/' + filename}")
     return os.path.join(output_folder, filename)
+
 
 def download_file_subprocess(url, output_folder):
     os.makedirs(output_folder, exist_ok=True)
@@ -22,6 +23,7 @@ def download_file_subprocess(url, output_folder):
 
     print(f"File downloaded with curl-subproc to {output_folder + '/' + filename}")
     return os.path.join(output_folder, filename)
+
 
 def download_file_requests(url, output_folder):
     os.makedirs(output_folder, exist_ok=True)
