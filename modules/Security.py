@@ -10,6 +10,14 @@ from cryptography.hazmat.primitives import padding
 
 # Valgt standardmetode til kryptering i projektet
 # AES-GCM bruges som standard, når der ikke vælges en anden metode
+# Begrundelse:
+# - CSV og database-data er tekst værdier.
+# - AES-GCM giver både fortrolighed og integritet i en operation.
+# - Det er mere sikkert og enklere end ren AES-CBC, som kræver ekstra
+#   beskyttelse mod manipulation.
+# - Fernet er også sikkert, men AES-GCM er mere direkte og velegnet til
+#   felt-for-felt kryptering i denne type ETL-pipeline.
+
 DEFAULT_METHOD = "aes_gcm"
 
 
